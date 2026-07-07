@@ -13,7 +13,7 @@ import {
   YAxis,
   ZAxis,
 } from 'recharts';
-import { ArrowLeft, ArrowUpRight, ChevronDown, Signal, Wifi } from 'lucide-react';
+import { ArrowUpRight, ChevronDown } from 'lucide-react';
 import { article, marketTabs } from './data';
 import type { ExposurePoint, MarketTab, PerformancePeriod, TabMarketData } from './types';
 
@@ -42,34 +42,6 @@ function formatMarketScale(value: number) {
   }
 
   return `$${value.toFixed(value >= 10 ? 0 : 1)}B`;
-}
-
-function StatusBar() {
-  return (
-    <div className="status-bar" aria-hidden="true">
-      <span className="status-time">9:41</span>
-      <span className="status-icons">
-        <Signal size={18} strokeWidth={3} />
-        <Wifi size={18} strokeWidth={3} />
-        <span className="battery">
-          <span className="battery-fill" />
-        </span>
-      </span>
-    </div>
-  );
-}
-
-function Hero() {
-  return (
-    <header className="hero">
-      <img src={article.image} alt="" className="hero-image" />
-      <div className="hero-scrim" />
-      <StatusBar />
-      <button className="back-button" aria-label="Go back">
-        <ArrowLeft size={30} strokeWidth={2.4} />
-      </button>
-    </header>
-  );
 }
 
 function ArticleIntro() {
@@ -396,7 +368,6 @@ function App() {
     <main className="app-shell">
       <div className="phone-canvas">
         <section className="story-panel" aria-label="Article">
-          <Hero />
           <ArticleIntro />
         </section>
         <section className="market-panel" aria-label="Market analysis">

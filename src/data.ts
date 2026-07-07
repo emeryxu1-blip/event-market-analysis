@@ -3,8 +3,6 @@ import type { MarketDataSource, TabMarketData } from './types';
 export const article = {
   title: 'AI storage',
   date: 'Dec. 12, 2023',
-  image:
-    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
   url: 'https://news.ainvest.com/deep-topic/topic/dt_01KW1DH72RH4MH7F9KQ7ANJ5R1',
 };
 
