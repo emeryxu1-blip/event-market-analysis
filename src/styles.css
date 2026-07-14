@@ -65,14 +65,60 @@ button {
 .article-panel {
   position: relative;
   z-index: 1;
-  padding: calc(28px + env(safe-area-inset-top)) 24px 24px;
-  background: var(--surface-solid);
-  box-shadow: 0 1px 0 rgba(60, 60, 67, 0.08);
+  padding: calc(14px + env(safe-area-inset-top)) 14px 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.88) 100%),
+    var(--surface-solid);
+  box-shadow:
+    0 1px 0 rgba(60, 60, 67, 0.08),
+    0 18px 44px rgba(0, 0, 0, 0.06);
+}
+
+.theme-media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 18px;
+  border: 1px solid rgba(60, 60, 67, 0.12);
+  border-radius: 24px;
+  background: #e8eaef;
+  box-shadow:
+    0 18px 38px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  isolation: isolate;
+}
+
+.theme-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.16) 100%);
+  pointer-events: none;
+}
+
+.theme-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.theme-content {
+  padding: 0 10px 2px;
+}
+
+.theme-kicker {
+  margin: 0 0 8px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
 }
 
 .article-panel h1 {
   max-width: 20ch;
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   color: var(--label);
   font-size: clamp(28px, 7vw, 34px);
   line-height: 1.07;
@@ -81,7 +127,7 @@ button {
 
 .article-panel time {
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   color: var(--secondary);
   font-size: 19px;
   line-height: 1.2;
@@ -89,19 +135,22 @@ button {
 
 .analysis-button {
   display: inline-flex;
-  min-height: 42px;
+  min-height: 46px;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 10px 16px;
+  gap: 12px;
+  padding: 8px 8px 8px 18px;
   border-radius: 999px;
   color: #fff;
-  background: linear-gradient(180deg, #178bff 0%, #0071e3 100%);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 38%),
+    linear-gradient(180deg, #178bff 0%, #006edb 100%);
   box-shadow:
-    0 12px 24px rgba(0, 122, 255, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    0 16px 32px rgba(0, 122, 255, 0.28),
+    0 3px 8px rgba(0, 76, 153, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 760;
   line-height: 1;
   text-decoration: none;
   transition:
@@ -112,11 +161,27 @@ button {
 
 .analysis-button:hover {
   filter: brightness(1.03);
+  box-shadow:
+    0 18px 36px rgba(0, 122, 255, 0.3),
+    0 4px 10px rgba(0, 76, 153, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.36);
 }
 
 .analysis-button:active {
   transform: translateY(1px) scale(0.98);
   box-shadow: 0 8px 16px rgba(0, 122, 255, 0.22);
+}
+
+.analysis-button-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.26),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14);
 }
 
 .analysis-button:focus-visible,
