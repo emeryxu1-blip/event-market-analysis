@@ -51,7 +51,6 @@ function ArticleIntro() {
         <img src={article.image} alt={article.imageAlt} />
       </div>
       <div className="theme-content">
-        <p className="theme-kicker">Market Theme</p>
         <h1 id="article-title">{article.title}</h1>
         <time dateTime="2023-12-12">{article.date}</time>
         <a className="analysis-button" href={article.url} target="_blank" rel="noreferrer">

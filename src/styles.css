@@ -107,15 +107,6 @@ button {
   padding: 0 10px 2px;
 }
 
-.theme-kicker {
-  margin: 0 0 8px;
-  color: var(--blue);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0;
-  line-height: 1;
-}
-
 .article-panel h1 {
   max-width: 20ch;
   margin: 0 0 8px;
