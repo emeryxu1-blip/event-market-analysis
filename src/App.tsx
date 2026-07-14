@@ -49,16 +49,16 @@ function ArticleIntro() {
     <section className="article-panel" aria-labelledby="article-title">
       <div className="theme-media">
         <img src={article.image} alt={article.imageAlt} />
+        <a className="analysis-button" href={article.url} target="_blank" rel="noreferrer">
+          <span>Read Full Analysis</span>
+          <span className="analysis-button-icon" aria-hidden="true">
+            <ArrowUpRight size={15} strokeWidth={2.5} />
+          </span>
+        </a>
       </div>
       <div className="theme-content">
         <h1 id="article-title">{article.title}</h1>
         <time dateTime="2023-12-12">{article.date}</time>
-        <a className="analysis-button" href={article.url} target="_blank" rel="noreferrer">
-          <span>Read Full Analysis</span>
-          <span className="analysis-button-icon" aria-hidden="true">
-            <ArrowUpRight size={16} strokeWidth={2.5} />
-          </span>
-        </a>
       </div>
     </section>
   );

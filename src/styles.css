@@ -78,7 +78,7 @@ button {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   border: 1px solid rgba(60, 60, 67, 0.12);
   border-radius: 24px;
   background: #e8eaef;
@@ -92,7 +92,8 @@ button {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.16) 100%);
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 48%, rgba(0, 0, 0, 0.34) 100%);
   pointer-events: none;
 }
 
@@ -104,7 +105,7 @@ button {
 }
 
 .theme-content {
-  padding: 0 10px 2px;
+  padding: 0 10px;
 }
 
 .article-panel h1 {
@@ -118,30 +119,34 @@ button {
 
 .article-panel time {
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 0;
   color: var(--secondary);
   font-size: 19px;
   line-height: 1.2;
 }
 
 .analysis-button {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 2;
   display: inline-flex;
-  min-height: 46px;
+  min-height: 42px;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 8px 8px 8px 18px;
+  gap: 9px;
+  padding: 7px 7px 7px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
   color: #fff;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 38%),
-    linear-gradient(180deg, #178bff 0%, #006edb 100%);
+  background: rgba(18, 18, 20, 0.76);
   box-shadow:
-    0 16px 32px rgba(0, 122, 255, 0.28),
-    0 3px 8px rgba(0, 76, 153, 0.16),
-    inset 0 1px 0 rgba(255, 255, 255, 0.34);
-  font-size: 16px;
-  font-weight: 760;
+    0 8px 24px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  font-size: 15px;
+  font-weight: 700;
   line-height: 1;
   text-decoration: none;
   transition:
@@ -151,28 +156,28 @@ button {
 }
 
 .analysis-button:hover {
-  filter: brightness(1.03);
+  background: rgba(18, 18, 20, 0.88);
   box-shadow:
-    0 18px 36px rgba(0, 122, 255, 0.3),
-    0 4px 10px rgba(0, 76, 153, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.36);
+    0 10px 28px rgba(0, 0, 0, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .analysis-button:active {
-  transform: translateY(1px) scale(0.98);
-  box-shadow: 0 8px 16px rgba(0, 122, 255, 0.22);
+  transform: scale(0.98);
+  background: rgba(18, 18, 20, 0.94);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2);
 }
 
 .analysis-button-icon {
   display: grid;
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
   place-items: center;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.16);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.26),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .analysis-button:focus-visible,
@@ -181,6 +186,11 @@ button {
 .table-header button:focus-visible,
 .more-button:focus-visible {
   outline: 3px solid rgba(0, 122, 255, 0.34);
+  outline-offset: 3px;
+}
+
+.analysis-button:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.94);
   outline-offset: 3px;
 }
 
